@@ -1,0 +1,190 @@
+[{
+    "layer": "bottom",
+    "position": "top",
+
+    "modules-left": [
+        "clock#date",
+        "hyprland/workspaces",
+        "wlr/taskbar"
+    ],
+
+    "modules-center": [
+        "cava#left",
+        "clock",
+        "cava#right"
+    ],
+
+    "modules-right": [
+        "pulseaudio",
+        "temperature",
+        "network",
+        "cpu",
+        "memory",
+        "battery",
+        "custom/power"
+    ],
+
+    "sway/window": {
+        "max-length": 50
+    },
+
+    "wlr/taskbar": {
+        "icon-size": 15,
+        "format": "{icon}",
+        "on-click": "activate",
+        "tooltip": false
+    },
+
+    "battery": {
+        "bat": "BAT0",
+        "states": {
+            "warning": 30,
+            "critical": 10
+        },
+        "tooltip": false,
+        "format": "{icon} {capacity}%",
+        "format-icons": ["", "", "", "", ""]
+    },
+
+    "clock#date": {
+        "format": "{:%a %b %d }",
+        "rotate": 0,
+        "tooltip": false
+    },
+
+    "clock": {
+        "format": "{:%I:%M:%S %p}",
+        "rotate": 0,
+        "interval": 1,
+        "tooltip": false
+    },
+
+    "hyprland/workspaces": {
+        "format": "{name}",
+        /*
+        "format-icons": {
+            "0": "",
+            "1": "",
+            "2": "",
+            "3": "",
+            "4": "",
+            "5": "",
+            "6": "",
+            "7": "",
+            "8": "",
+            "9": "",
+            "active": ""
+        },
+        */
+        "persistent-workspaces": {
+            "Virtual-0": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+        }
+    },
+
+    "network": {
+        "rotate": 0,
+        "format-ethernet": " ",
+        "format-linked": " {ifname} (No IP)",
+        "format-disconnected": "󰖪 ",
+        "interval": 2,
+        "tooltip": false,
+        "format-wifi": " {signalStrength}%"
+    },
+
+    "cava#left": {
+        "framerate": 30,
+        "autosens": 1,
+        "sensitivity": 100,
+        "bars": 2,
+        "lower_cutoff_freq": 50,
+        "higher_cutoff_freq": 10000,
+        "hide_on_silence": false,
+        "method": "pulse",
+        "source": "auto",
+        "stereo": true,
+        "reverse": false,
+        "bar_delimiter": 0,
+        "monstercat": false,
+        "waves": false,
+        "noise_reduction": 0.77,
+        "input_delay": 2,
+        "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
+        "actions": {
+            "on-click-right": "mode"
+        }
+    },
+
+    "cava#right": {
+        "framerate": 30,
+        "autosens": 1,
+        "sensitivity": 100,
+        "bars": 2,
+        "lower_cutoff_freq": 50,
+        "higher_cutoff_freq": 10000,
+        "hide_on_silence": false,
+        "method": "pulse",
+        "source": "auto",
+        "stereo": true,
+        "reverse": false,
+        "bar_delimiter": 0,
+        "monstercat": false,
+        "waves": false,
+        "noise_reduction": 0.77,
+        "input_delay": 2,
+        "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
+        "actions": {
+            "on-click-right": "mode"
+        }
+    },
+
+    "custom/power": {
+        "format": " ⏻ ",
+        "tooltip": false,
+        "menu": "on-click",
+        "menu-file": "/etc/nixos/modules/jinx/power_menu.xml",
+        "menu-actions": {
+            "shutdown": "systemctl poweroff",
+            "reboot": "reboot",
+            "suspend": "systemctl suspend",
+            "hibernate": "systemctl hibernate"
+        }
+    },
+
+    "memory": {
+        "format": " {percentage}%",
+        "interval": 5,
+        "tooltip": false
+    },
+
+    "temperature": {
+        "thermal-zone": 0,
+        "format": "{temperatureC}°C",
+        "tooltip": false
+    },
+
+    "cpu": {
+        "format": " {usage}%",
+        "interval": 5,
+        "tooltip": false
+    },
+
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-bluetooth": "{icon} {volume}%",
+        "format-muted": "",
+        "format-icons": {
+            "alsa_output.pci-0000_00_1f.3.analog-stereo": "",
+            "alsa_output.pci-0000_00_1f.3.analog-stereo-muted": "",
+            "headphones": "",
+            "handsfree": "",
+            "headset": "",
+            "phone": "",
+            "phone-muted": "",
+            "portable": "",
+            "car": "",
+            "default": ["", ""]
+        },
+        "tooltip": false,
+        "scroll-step": 1
+    }
+}]
