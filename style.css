@@ -1,0 +1,146 @@
+/* Variables */
+@define-color background rgba(0, 0, 0, 0.8);
+@define-color white rgba(255, 255, 255, 1);
+@define-color border rgba(102, 102, 102, 1);
+
+* {
+    border: none;
+    border-radius: 0px 0px 0px 0px;
+    font-family: "Fira Code", "FontAwesome";
+    font-weight: bold;
+    font-size: 14px;
+    min-height: 0;
+    color: #FFFFFF;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+window#waybar {
+    background: rgba(0, 0, 0, 0);
+}
+
+menu {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+menuitem:hover {
+    background: rgba(102, 102, 102, 0.5);
+}
+
+#custom-power {
+    background: @background;
+    border-bottom: 2px solid @border;
+    padding: 2px;
+    color: @white;
+}
+
+#cava.left {
+    background: @background;
+    border-bottom: 2px solid @border;
+    border-left: 2px solid @border;
+    padding: 5px;
+}
+
+#cava.right {
+    background: @background;
+    border-bottom: 2px solid @border;
+    border-right: 2px solid @border;
+    padding: 5px;
+}
+
+#workspaces {
+    background: @background;
+    border-bottom: 2px solid @border;
+    padding: 1px;
+    color: @white;
+}
+
+#workspaces button {
+    color: rgba(0, 0, 0, 0.8);
+    background: @background;
+    border-radius: 4px 4px 4px 4px;
+}
+
+#workspaces button:hover {
+    background: rgba(102, 102, 102, 0.8);
+    color: @white;
+}
+
+#workspaces button.active {
+    background-color: rgba(100, 100, 100, 0.8);
+    color: @white;
+}
+
+#taskbar {
+    background: @background;
+    border-bottom: 2px solid @border;
+    border-right: 2px solid @border;
+    padding: 1px;
+    color: @white;
+}
+
+#clock {
+    background: @background;
+    border-bottom: 2px solid @border;
+    padding: 5px;
+}
+
+#clock.menu {
+    background: @white;
+}
+
+#battery {
+    background: @background;
+    border-bottom: 2px solid @border;
+    padding: 5px;
+}
+
+#cpu {
+    background: @background;
+    border-bottom: 2px solid @border;
+    padding: 5px;
+}
+
+#network {
+    background: @background;
+    border-bottom: 2px solid @border;
+    padding: 5px;
+}
+
+#temperature {
+    background: @background;
+    border-bottom: 2px solid @border;
+    padding: 5px;
+}
+
+#memory {
+    background: @background;
+    border-bottom: 2px solid @border;
+    padding: 5px;
+}
+
+#pulseaudio {
+    background: @background;
+    border-bottom: 2px solid @border;
+    border-left: 2px solid @border;
+    padding: 5px;
+}
+
+#battery.warning {
+    color: #FFFF00;
+}
+
+#battery.critical {
+    color: #FF0000;
+}
+
+#battery.plugged {
+    color: #00FF00;
+}
+
+#battery.charging {
+    color: #00FF00;
+}
+
+#battery.full {
+    color: #2222FF;
+}
